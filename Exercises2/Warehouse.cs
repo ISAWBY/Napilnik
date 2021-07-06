@@ -22,6 +22,7 @@ namespace Exercises2
         {
             if (_allProducts.TryGetValue(product, out var value) && value < amount)
                 throw new ArgumentOutOfRangeException(nameof(amount));
+            
             return true;
         }
     }

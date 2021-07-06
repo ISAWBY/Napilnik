@@ -1,13 +1,15 @@
-﻿namespace Exercises2
+﻿using System;
+
+namespace Exercises2
 {
     internal class Product
     {
-        private readonly string _model;
+        public string Model { get; }
 
-        public string Model => _model;
         public Product(string model)
         {
-            _model = model;
+            if (model == null || model.Equals("")) throw new ArgumentNullException(nameof(model));
+            Model = model;
         }
     }
 }

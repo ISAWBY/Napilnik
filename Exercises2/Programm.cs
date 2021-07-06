@@ -20,7 +20,7 @@ namespace Exercises2
             cart.Add(iPhone12, 4);
             cart.Add(iPhone11, 1);
             
-            Console.WriteLine(cart.GetOrder().Paylink);
+            Console.WriteLine(cart.GetOrder().PayLink);
         }
     }
 }

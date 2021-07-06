@@ -1,15 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Exercises2
 {
     internal class Order
     {
-        public string Paylink { get; }
+        public string PayLink { get; }
 
         public Order(IReadOnlyDictionary<Product, int> products)
         {
-            StringBuilder link = new StringBuilder();
+            if (products == null) throw new ArgumentNullException(nameof(products));
+            
+            var link = new StringBuilder();
+            
             foreach (var product in products)
             {
                 link.Append("N:"+product.Key.Model);
@@ -17,7 +21,7 @@ namespace Exercises2
                 link.Append(" , ");
             }
 
-            Paylink = link.ToString();
+            PayLink = link.ToString();
         }
     }
 }
