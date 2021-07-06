@@ -5,7 +5,7 @@ namespace HomeWorks
     class Player
     {
         private int _health;
-        public bool Dead => _health < 0;
+        public bool Dead => _health <= 0;
 
         public Player(int health)
         {
@@ -14,13 +14,14 @@ namespace HomeWorks
         
         public void TakeDamage(int damage)
         {
-            if (Dead) return;
+            if (Dead) 
+                throw new InvalidOperationException(nameof(TakeDamage));
             if (damage < 0)
                 throw new ArgumentOutOfRangeException(nameof(damage));
 
             _health -= damage;
 
-            if (_health<=0) 
+            if (_health <= 0) 
                 _health = 0;
         }
     }

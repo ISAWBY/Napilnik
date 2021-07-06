@@ -1,4 +1,6 @@
-﻿namespace HomeWorks
+﻿using System;
+
+namespace HomeWorks
 {
     class Bot
     {
@@ -6,7 +8,7 @@
 
         public Bot(Weapon weapon)
         {
-            _weapon = weapon;
+            _weapon = weapon ?? throw new ArgumentNullException(nameof(weapon));
         }
 
         public void OnSeePlayer(Player player)
