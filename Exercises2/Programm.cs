@@ -18,7 +18,7 @@ namespace Exercises2
 
             Cart cart = shop.GetCart();
             cart.Add(iPhone12, 4);
-            cart.Add(iPhone11, 1);
+            cart.Add(iPhone11, 10);
             
             Console.WriteLine(cart.GetOrder().PayLink);
         }

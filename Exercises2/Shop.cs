@@ -13,6 +13,5 @@ namespace Exercises2
         {
             return new Cart(_warehouse);
         }
-
     }
 }

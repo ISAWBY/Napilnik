@@ -18,7 +18,7 @@ namespace Exercises2
             _allProducts.Add(product,amount);
         }
 
-        public bool ProductInStock(Product product, int amount)
+        public bool IsEnoughProducts(Product product, int amount)
         {
             if (_allProducts.TryGetValue(product, out var value) && value < amount)
                 throw new ArgumentOutOfRangeException(nameof(amount));
@@ -29,6 +29,6 @@ namespace Exercises2
 
     internal interface IWarehouse
     {
-        bool ProductInStock(Product product, int amount);
+        bool IsEnoughProducts(Product product, int amount);
     }
 }

@@ -13,12 +13,13 @@ namespace Exercises2
             _warehouse = warehouse ?? throw new ArgumentNullException(nameof(warehouse));
             _productsInStock = new Dictionary<Product, int>();
         }
+        
         public void Add(Product product, int amount)
         {
             if (product == null) throw new ArgumentNullException(nameof(product));
             if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
             
-            if(_warehouse.ProductInStock(product,amount)) 
+            if(_warehouse.IsEnoughProducts(product,amount)) 
                 _productsInStock.Add(product,amount);
         }
 
