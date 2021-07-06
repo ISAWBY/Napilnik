@@ -9,15 +9,15 @@ namespace HomeWorks
         
         public Weapon(int damage, int bullets)
         {
-            if(damage < 0 || bullets < 0)
-                throw new ArgumentOutOfRangeException();
+            if(damage < 0 || bullets < 0) throw new ArgumentOutOfRangeException();
             
             _damage = damage;
             _bullets = bullets;
         }
+        
         public void Fire(Player player)
         {
-            if (_bullets <= 0) return;
+            if (_bullets <= 0) throw new ArgumentOutOfRangeException(nameof(_bullets));
             
             player.TakeDamage(_damage);
             _bullets--;

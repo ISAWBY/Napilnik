@@ -14,6 +14,7 @@ namespace HomeWorks
         public void OnSeePlayer(Player player)
         {
             if (player.Dead) return;
+            
             _weapon.Fire(player);
         }
     }
