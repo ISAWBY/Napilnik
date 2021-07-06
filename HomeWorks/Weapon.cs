@@ -18,6 +18,7 @@ namespace HomeWorks
         public void Fire(Player player)
         {
             if (_bullets <= 0) throw new ArgumentOutOfRangeException(nameof(_bullets));
+            if (player == null) throw new ArgumentNullException(nameof(player));
             
             player.TakeDamage(_damage);
             _bullets--;

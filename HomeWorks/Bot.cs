@@ -13,6 +13,7 @@ namespace HomeWorks
 
         public void OnSeePlayer(Player player)
         {
+            if (player == null) throw new ArgumentNullException(nameof(player));
             if (player.Dead) return;
             
             _weapon.Fire(player);
